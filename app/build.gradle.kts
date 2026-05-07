@@ -45,7 +45,7 @@ android {
     namespace = "app.grapheneos.camera"
 
     defaultConfig {
-        applicationId = "app.grapheneos.camera"
+        applicationId = "it.belloworld.camera"
         minSdk = 29
         targetSdk = 35
         versionCode = 90
