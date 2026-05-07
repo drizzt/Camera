@@ -11,6 +11,12 @@ class CameraControl(private val camConfig: CamConfig) {
 
     fun zoomOut() = zoomByRatio(-1f)
 
+    fun setZoomRatio(target: Float) {
+        val state = zoomState() ?: return
+        val clamped = target.coerceIn(state.minZoomRatio, state.maxZoomRatio)
+        camConfig.camera?.cameraControl?.setZoomRatio(clamped)
+    }
+
     private fun zoomByRatio(zoomValue: Float) {
         val zoomState = zoomState() ?: return
         val currentZoomRatio = zoomState.zoomRatio

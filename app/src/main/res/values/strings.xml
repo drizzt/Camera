@@ -20,6 +20,7 @@
     <string name="start_value_timer">00:00</string>
     <string name="zoom_in">Zoom In</string>
     <string name="zoom_out">Zoom Out</string>
+    <string name="zoom_select_ratio">Set zoom to %1$s</string>
     <string name="scan_result">Scan Result</string>
     <string name="share_qr_text">Share QR Text</string>
     <string name="open_with">Open with</string>

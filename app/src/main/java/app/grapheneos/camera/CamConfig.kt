@@ -1326,9 +1326,14 @@ class CamConfig(private val mActivity: MainActivity) {
             if (it.linearZoom != 0f || it.zoomRatio != 1f) {
                 mActivity.zoomBar.updateThumb()
             }
+            camera?.let { cam -> mActivity.cameraSelectorBar.update(cam) }
         }
 
         mActivity.zoomBar.updateThumb(false)
+        camera?.let { mActivity.cameraSelectorBar.update(it) }
+        if (isQRMode) {
+            mActivity.cameraSelectorBar.visibility = View.GONE
+        }
 
         camera?.cameraInfo?.exposureState?.let { mActivity.exposureBar.setExposureConfig(it) }
 

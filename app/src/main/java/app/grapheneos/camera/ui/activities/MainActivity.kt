@@ -161,6 +161,8 @@ open class MainActivity : AppCompatActivity(),
     lateinit var zoomBar: ZoomBar
     lateinit var zoomBarPanel: LinearLayout
 
+    lateinit var cameraSelectorBar: app.grapheneos.camera.ui.CameraSelectorBar
+
     lateinit var exposureBar: ExposureBar
     lateinit var exposureBarPanel: LinearLayout
 
@@ -825,6 +827,9 @@ open class MainActivity : AppCompatActivity(),
 
         zoomBarPanel = binding.zoomBarPanel
 
+        cameraSelectorBar = binding.cameraSelectorBar
+        cameraSelectorBar.setMainActivity(this)
+
         exposureBar = binding.exposureBar
         exposureBar.setMainActivity(this)
 
@@ -1366,6 +1371,7 @@ open class MainActivity : AppCompatActivity(),
         rotateView(exposureNegIcon, iconRotation)
         rotateView(zoomInIcon, iconRotation)
         rotateView(zoomOutIcon, iconRotation)
+        rotateView(cameraSelectorBar, iconRotation)
         rotateView(settingsDialog.settingsFrame, iconRotation)
 
         rotateView(micOffIcon, iconRotation)
@@ -1373,7 +1379,7 @@ open class MainActivity : AppCompatActivity(),
     }
 
     lateinit var camConfig: CamConfig
-    private lateinit var cameraControl: CameraControl
+    lateinit var cameraControl: CameraControl
 
     companion object {
         private const val TAG = "GOCam"
